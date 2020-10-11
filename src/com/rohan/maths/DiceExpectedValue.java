@@ -1,5 +1,6 @@
 package com.rohan.maths;
 
+import java.security.InvalidParameterException;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -23,6 +24,10 @@ public class DiceExpectedValue {
             System.out.println("Defaulting to 3 dice.");
             ex.printStackTrace();
             numOfDice = 3;
+        }
+
+        if (numOfDice <= 0) {
+            throw new InvalidParameterException("n must be greater than 0!");
         }
 
         System.out.println("Number of dice: " + numOfDice);
